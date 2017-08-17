@@ -17,7 +17,6 @@ angular.module('weatherApp.index', ['ngRoute'])
   // Set the forecast API URL
   const forecastUrl = `http://api.openweathermap.org/data/2.5/forecast/daily?cnt=6&appid=${apiKey}&units=imperial`;
 
-
   // Get date & time 
   $scope.date = new Date();
   
@@ -32,7 +31,6 @@ angular.module('weatherApp.index', ['ngRoute'])
       lng: null
     }
   }
-
 
   // Asks user for browser location
   const getUserLocation = () => {
