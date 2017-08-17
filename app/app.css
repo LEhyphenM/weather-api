@@ -98,8 +98,10 @@ input#citySearch::placeholder{
 	cursor:pointer;
 }
 
+.cityTemp h2, .weather h5{color:#F4F4F4;}
+
 .cityTemp h2 {
-  font-weight:200;
+  font-weight:300;
   letter-spacing:2px;
 }
 
@@ -107,7 +109,7 @@ input#citySearch::placeholder{
   display:inline-flex;
 }
 
-.cityTemp h2, .weather h5{color:#F4F4F4;}
+
 
 /* === MAIN WEATHER CONTENT === */
 
@@ -132,7 +134,7 @@ input#citySearch::placeholder{
 }
 
 .weather h5{
-  font-weight:200;
+  font-weight:300;
   letter-spacing:1.5px;
 }
 
@@ -141,20 +143,9 @@ input#citySearch::placeholder{
   margin:0 auto;
 }
 
-.forecast h4.date{
-  color:#F4F4F4;
-  font-weight:200;
-  letter-spacing:1.5px;
-}
-
 h5.highTemp span.temp, 
 h5.lowTemp span.temp{
   color:#F4F4F4;
-}
-
-h6.extras{
-  color:#F4F4F4;
-  font-weight:200;
 }
 
 
@@ -164,19 +155,16 @@ h6.extras{
 footer h6 {
   letter-spacing:3px;
   color:#F4F4F4;
-  font-weight:200;
+  font-weight:300;
   text-transform:uppercase;
 }
 
 
 /* === MEDIA QUERIES === */
   @media all and (max-width: 468px) {
-   
-	 .cityTemp h2, 
-   .weather h5,
-   footer h6 {font-weight: 300;} 
+
     .buffer{padding:32px 0;}
-    
+
     .cityTemp h2{
       font-size:30px;
       letter-spacing:1px;
@@ -189,11 +177,7 @@ footer h6 {
   }
 
   @media all and (max-width: 768px) {
-    
-   .cityTemp h2, 
-   .weather h5,
-   footer h6 {font-weight: 300;} 
-    
+
     .main{overflow:hidden;}
 
     .weather{display:table;}
