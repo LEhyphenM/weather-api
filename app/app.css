@@ -1,0 +1,234 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+
+*,
+*:before,
+*:after { box-sizing: border-box; }
+
+body {
+  font-family:'Lato', Helvetica, Arial, sans-serif;
+  cursor:default;
+  background:#262626;
+  line-height:1.6;
+}
+
+/* === Typography === */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight:normal;
+    margin:0;
+}
+
+h1 {font-size: 48px;}
+h2 {font-size: 32px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+h5 {font-size: 20px;}
+h6 {font-size: 16px;}
+
+/* === Utility === */
+.textCenter {text-align:center;}
+.padded{padding:16px;}
+.buffer{padding:32px;}
+.uppercase{text-transform:uppercase;}
+.bold{font-weight:400;} 
+.container{max-width:1024px; margin:0 auto;}
+
+.rose{
+  color:#8C1C25;
+  font-weight:300;
+}
+
+a, ul, li {
+  text-decoration:none; 
+  list-style-type:none; 
+  color:#262626;
+}
+
+/* === HEADER === */
+
+header, header ul li, pre{
+  color:#F4F4F4;
+}
+
+header h1{
+  font-weight:400;
+  letter-spacing:1.0px;
+  color:#8C1C25;
+}
+
+/* === MAIN CONTENT === */
+.main{
+  color:#8C1C25;
+  font-family:'Lato', Helvetica, Arial, sans-serif;
+}
+
+.search input, .search button{
+	margin:0 5px;
+}
+
+#citySearch, #submit{
+  	outline:none;
+  	border-radius:3px;
+    max-height:33px;
+}
+
+#citySearch{
+  color:#262626;
+  padding:6px 10px;
+  border:1px solid #262626;
+}
+
+input#citySearch::placeholder{
+	padding:1px 3px;
+}
+
+#submit{
+	padding:5px 10px;
+	background:#262626;
+	color:#F4F4F4;
+	border:1px solid #F4F4F4;
+	font-weight:400;
+	font-size:14px;
+}
+
+#submit:hover, #submit:focus, 
+#submit:active{
+	background:#8C1C25;
+	transition:600ms;
+	cursor:pointer;
+}
+
+.cityTemp h2 {
+  font-weight:200;
+  letter-spacing:2px;
+}
+
+.cityTemp, .weather {
+  display:inline-flex;
+}
+
+.cityTemp h2, .weather h5{color:#F4F4F4;}
+
+/* === MAIN WEATHER CONTENT === */
+
+.main-weather {
+  margin:0 auto;
+  width:100%;
+  padding:0;
+}
+
+.weather{
+  width:100%;
+  margin:0 auto;
+  padding:0;
+}
+
+.weather h2.weekDay{
+  font-weight:300;
+  letter-spacing:1px;
+  color:#8C1C25;
+  padding-bottom:8px;
+  text-transform:lowercase;
+}
+
+.weather h5{
+  font-weight:200;
+  letter-spacing:1.5px;
+}
+
+.forecast{
+  display:block;
+  margin:0 auto;
+}
+
+.forecast h4.date{
+  color:#F4F4F4;
+  font-weight:200;
+  letter-spacing:1.5px;
+}
+
+h5.highTemp span.temp, 
+h5.lowTemp span.temp{
+  color:#F4F4F4;
+}
+
+h6.extras{
+  color:#F4F4F4;
+  font-weight:200;
+}
+
+
+
+/* === FOOTER === */
+
+footer h6 {
+  letter-spacing:3px;
+  color:#F4F4F4;
+  font-weight:200;
+  text-transform:uppercase;
+}
+
+
+/* === MEDIA QUERIES === */
+  @media all and (max-width: 468px) {
+
+    .buffer{padding:32px 0;}
+    
+    .cityTemp h2{
+      font-size:30px;
+      letter-spacing:1px;
+    }
+
+    footer h6{
+      font-size:14px;
+      letter-spacing:1px;
+    }
+  }
+
+  @media all and (max-width: 768px) {
+
+    .main{overflow:hidden;}
+
+    .weather{display:table;}
+
+    .forecast{
+      margin:0 4%;
+      display:inline-table;
+      padding:12px 0;
+    }
+
+    footer.buffer{
+      padding:0 0 32px;
+    }
+
+  }
+
+  @media all and (min-width: 960px) {
+    /* Establish all items within a row as being flexbox-enabled */
+    .row{
+      display:-webkit-box;
+      display:-ms-flexbox;
+      display:flex;
+    }
+
+    /* Any class that begins with "col-" gets 20px of right margin */
+    [class*="col-"] { margin-right: 20px; }
+
+    /* The last column in a row gets the right margin removed*/
+    [class*="col-"]:last-child { margin-right: 0; }
+
+    /* These 12 classes will have the flex property of the index number in the loop.*/
+    .col-1{ -webkit-box-flex:1; -ms-flex:1; flex:1;}
+    .col-2{ -webkit-box-flex:2; -ms-flex:2; flex:2;}
+    .col-3{ -webkit-box-flex:3; -ms-flex:3; flex:3;}
+    .col-4{ -webkit-box-flex:4; -ms-flex:4; flex:4;}
+    .col-5{ -webkit-box-flex:5; -ms-flex:5; flex:5;}
+    .col-6{ -webkit-box-flex:6; -ms-flex:6; flex:6;}
+    .col-7{ -webkit-box-flex:7; -ms-flex:7; flex:7;}
+    .col-8{ -webkit-box-flex:8; -ms-flex:8; flex:8;}
+    .col-9{ -webkit-box-flex:9; -ms-flex:9; flex:9;}
+    .col-10{ -webkit-box-flex:10; -ms-flex:10; flex:10;}
+    .col-11{ -webkit-box-flex:11; -ms-flex:11; flex:11;}
+    .col-12{ -webkit-box-flex:12; -ms-flex:12; flex:12;}
+
+  }
