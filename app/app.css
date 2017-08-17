@@ -189,7 +189,11 @@ footer h6 {
   }
 
   @media all and (max-width: 768px) {
-
+    
+   .cityTemp h2, 
+   .weather h5,
+   footer h6 {font-weight: 300;} 
+    
     .main{overflow:hidden;}
 
     .weather{display:table;}
