@@ -1,49 +1,49 @@
 <header class="textCenter buffer">
-	<h1>Local Forecast</h1>
+    <h1>Local Forecast</h1>
 </header>
 
 <div class="main container textCenter" ng-init="getUserLocation();">
 
-	<div class="cityTemp">
-		<h2 ng-if="data.loading">Loading...</h2>
-	    <h2 ng-hide="data.loading"> 
-	    	{{ data.weather.city.name }}, {{ data.weather.city.country }} <span class="rose">•</span> {{ data.weather.list[0].temp.day | number:0 }}°F
-	    </h2>
-	</div>
+    <div class="cityTemp">
+        <h2 ng-if="data.loading">Loading...</h2>
+        <h2 ng-hide="data.loading"> 
+            {{ data.weather.city.name }}, {{ data.weather.city.country }} <span class="rose">•</span> {{ data.weather.list[0].temp.day | number:0 }}°F
+        </h2>
+    </div>
 
-	<div class="search textCenter buffer" ng-hide="data.loading">
-		<input type="number" ng-model="data.zipcode" id="citySearch">
-		<button type="button" ng-click="getWeatherByZipcode()" id="submit">Update Zipcode</button>
-	</div>
+    <div class="search textCenter buffer" ng-hide="data.loading">
+        <input type="number" ng-model="data.zipcode" id="citySearch">
+        <button type="button" ng-click="getWeatherByZipcode()" id="submit">Update Zipcode</button>
+    </div>
 
-	<div class="padded"></div>
+    <div class="padded"></div>
 
-	<div class="main-weather textCenter container">
-		<div class="weather row">
-			<div class="forecast textCenter" ng-repeat="day in data.weather.list">
-				<h2 class="weekDay"> {{ day.dt * 1000 | date: 'EEEE' }} </h2>
+    <div class="main-weather textCenter container">
+        <div class="weather row">
+            <div class="forecast textCenter" ng-repeat="day in data.weather.list">
+                <h2 class="weekDay"> {{ day.dt * 1000 | date: 'EEEE' }} </h2>
 
-				<span class="weatherIcon">
-					<img ng-src="http://openweathermap.org/img/w/{{ day.weather[0].icon }}.png" />
-				</span>
-				
-				<h5 class="details">{{ day.weather[0].description }}</h5>
+                <span class="weatherIcon">
+                    <img ng-src="http://openweathermap.org/img/w/{{ day.weather[0].icon }}.png" />
+                </span>
+                
+                <h5 class="details">{{ day.weather[0].description }}</h5>
 
-				<h5 class="highTemp">
-					H:<span class="temp"> {{ day.temp.max | number:0 }}</span><span class="rose bold">°F</span>
-				</h5>
-				<h5 class="lowTemp">
-					L:<span class="temp"> {{ day.temp.min | number:0 }}</span><span class="rose bold">°F</span>
-				</h5>
-			</div>
-		</div>
-	</div>
+                <h5 class="highTemp">
+                    H:<span class="temp"> {{ day.temp.max | number:0 }}</span><span class="rose bold">°F</span>
+                </h5>
+                <h5 class="lowTemp">
+                    L:<span class="temp"> {{ day.temp.min | number:0 }}</span><span class="rose bold">°F</span>
+                </h5>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="buffer"></div>
 
 <footer class="textCenter buffer" ng-hide="data.loading">
-	<h6>last updated on: {{ date | date: "MM/dd/yyyy 'at' h:mm a" }}</h6>
+    <h6>last updated on: {{ date | date: "MM/dd/yyyy 'at' h:mm a" }}</h6>
 </footer>
 
 <!-- === Use to view all current weather data in JSON === -->
