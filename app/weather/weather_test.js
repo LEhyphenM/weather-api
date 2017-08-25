@@ -42,7 +42,7 @@ describe('weatherApp.index module', function() {
       // Create a controller
       let ctrl = createController();
 
-      // Inspect the initial coordinate values
+      // Inspect the initial scope property values
       expect(scope.data.loading).toEqual(false);
       expect(scope.data.error).toEqual(false);
       expect(scope.data.weather).toEqual({});
