@@ -38,11 +38,15 @@ describe('weatherApp.index module', function() {
   // Weather controller tests
   describe('weather controller', () => {
 
-    it('makes sure the coordinates equal null', () => {
+    it('makes sure the scope properties equal their initial values', () => {
       // Create a controller
       let ctrl = createController();
 
       // Inspect the initial coordinate values
+      expect(scope.data.loading).toEqual(false);
+      expect(scope.data.error).toEqual(false);
+      expect(scope.data.weather).toEqual({});
+      expect(scope.data.zipcode).toEqual(null);
       expect(scope.data.coordinates.lat).toEqual(null);
       expect(scope.data.coordinates.lon).toEqual(null);
     });
