@@ -28,7 +28,7 @@ angular.module('weatherApp.index', ['ngRoute'])
     zipcode: null,
     coordinates: {
       lat: null,
-      lng: null
+      lon: null
     }
   }
 
@@ -43,7 +43,7 @@ angular.module('weatherApp.index', ['ngRoute'])
   // Set the browser-granted geolocation coordinates
   const setUserCoordinates = (result) => {
     $scope.data.coordinates.lat = result.coords.latitude;
-    $scope.data.coordinates.lng = result.coords.longitude;
+    $scope.data.coordinates.lon = result.coords.longitude;
 
     getWeatherByCoordinates();
   }
@@ -51,8 +51,8 @@ angular.module('weatherApp.index', ['ngRoute'])
   // Get weather by coordinates
   const getWeatherByCoordinates = () => {
     let lat = $scope.data.coordinates.lat;
-    let lng = $scope.data.coordinates.lng;
-    let url = `&lat=${lat}&lon=${lng}`;
+    let lon = $scope.data.coordinates.lon;
+    let url = `&lat=${lat}&lon=${lon}`;
 
     getWeather(url);
   }
