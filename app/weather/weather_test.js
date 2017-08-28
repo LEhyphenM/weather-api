@@ -35,11 +35,6 @@ describe('weatherApp.index module', function() {
     }
   }));
 
-  afterEach(function () {
-   api.verifyNoOutstandingExpectation();
-   api.verifyNoOutstandingRequest();
-  });
-
   // Weather controller tests
   describe('weather controller', () => {
 
