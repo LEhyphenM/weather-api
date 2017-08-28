@@ -67,5 +67,29 @@ describe('weatherApp.index module', function() {
       // Check if the scope property changed.
       expect(scope.data.weather.data).toEqual('works');
     });
+
+    it('should correctly handle a failed API request', function (){
+
+      // Create a controller
+      let ctrl = createController();
+
+      // Determine if error is set to false initially
+      expect(scope.data.error).toEqual(false);
+
+      // Set a zipcode on scope.data
+      scope.data.zipcode = 60661;
+
+      // Change normal mocked request response
+      weatherRequestHandler.respond(400, 'There was a problem with your request.');
+
+      // Call scope.getWeatherByZipcode()
+      scope.getWeatherByZipcode();
+
+      // Flush the mocked request
+      api.flush();
+
+      // Check if the error property changed after the failed request
+      expect(scope.data.error).toEqual = true;
+    });
   });
 });
